@@ -1,5 +1,5 @@
 @media (max-width: 414px) {
-    
+
     .skip{
         position: absolute;
         right: 5%;
@@ -12,12 +12,28 @@
         right: 20%;
         z-index: 1;
     }
+
     .slider-item{
         position: relative;
         height: 100%;
         width: 100%;
         border-radius: 20px;
         background-color: lightblue;
+        overflow: hidden;
+    }
+
+    #first-slide{
+        background-color: red;
+    }
+
+    #second-slide{
+        background-color: orange;
+        display: none;
+    }
+
+    #third-slide{
+        background-color: yellow;
+        display: none;
     }
 
     .next-btn{
