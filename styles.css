@@ -15,6 +15,8 @@
 
     .slider-item{
         position: relative;
+        /* slider-items has display none; js na yung bahalang mag add ng active class */
+        display: none;
         height: 100%;
         width: 100%;
         border-radius: 20px;
@@ -22,18 +24,33 @@
         overflow: hidden;
     }
 
+    .active{
+        display: block;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+        background-color: lightblue;
+        overflow: hidden;
+        background-color: blueviolet;
+
+    }
+
     #first-slide{
+        
         background-color: red;
+
     }
 
     #second-slide{
+      
         background-color: orange;
-        display: none;
+
     }
 
     #third-slide{
         background-color: yellow;
-        display: none;
+
     }
 
     .next-btn{

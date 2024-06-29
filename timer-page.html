@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Main Timer Page</h1>
+    <!-- first time using dialog tag -->
+     <dialog open class="dialog">
+        <span class="close">&times;</span>
+        <label for="timer-task">Task :</label>
+        <input type="text" name="timer-task" id="timer-task">
+        <br>
+        <label for="timer-amount">Select Timer Duration</label>
+        <input type="number" name="timer-amount" id="timer-amount">
+
+        <button>Start Timer</button>
+     </dialog>
+
+     <!-- closes the dialog -->
+      <script>
+        // target the 'X'
+        let close = document.querySelector('.close');
+        // target the dialog
+        let dialog = document.querySelector('.dialog');
+
+        close.addEventListener('click', () =>{
+            // closes the dialog
+            dialog.close();
+        })
+      </script>
+</body>
+</html>
