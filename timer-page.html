@@ -1,34 +1,80 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <link rel="stylesheet" href="timer-page.css">
+  </head>
+  <body>
     <h1>Main Timer Page</h1>
     <!-- first time using dialog tag -->
-     <dialog open class="dialog">
+    <dialog open class="dialog">
         <span class="close">&times;</span>
         <label for="timer-task">Task :</label>
-        <input type="text" name="timer-task" id="timer-task">
-        <br>
-        <label for="timer-amount">Select Timer Duration</label>
-        <input type="number" name="timer-amount" id="timer-amount">
+        <input type="text" name="timer-task" id="timer-task" />
+        <br />
 
-        <button>Start Timer</button>
-     </dialog>
+        <label for="timer-amount">Focus Time</label>
+        <p>20 mins</p>
+      <select name="timer-amount" id="timer-amount">
+        <option value="20">20 Minutes</option>
+        <option value="40">40 Minutes</option>
+        <option value="60">1 Hour</option>
+      </select>
+      <br>
+      <label for="timer-break">Timer break</label>
+      <select name="timer-break" id="timer-break">
+        <option value="5">5 Minutes</option>
+        <option value="10">10 Minutes</option>
+        <option value="15">15 Minutes</option>
+      </select>
 
-     <!-- closes the dialog -->
-      <script>
-        // target the 'X'
-        let close = document.querySelector('.close');
-        // target the dialog
-        let dialog = document.querySelector('.dialog');
+      <button id="start-btn">Start Timer</button>
+    </dialog>
 
-        close.addEventListener('click', () =>{
-            // closes the dialog
-            dialog.close();
-        })
-      </script>
-</body>
+    <!-- the UI for the timer hidden by default until toggled by some event -->
+    <div class="background">
+        <div class="timer">
+            <h2>Pomodoro Timer</h2>
+            <div class="task">
+            </div>
+        </div>
+    </div>
+
+    <!-- closes the dialog -->
+    <script>
+      // target the 'X'
+      let close = document.querySelector(".close");
+      // target the dialog
+      let dialog = document.querySelector(".dialog");
+
+      close.addEventListener("click", () => {
+        // closes the dialog
+        dialog.close();
+      });
+    </script>
+
+    <!-- for the start button -->
+    <script>
+      // when the start button is clicked first  check if the timer if the timer-task and the timer-amount have some
+      // value on it
+      let start_btn = document.querySelector('#start-btn');
+      let task_div = document.querySelector('.task');
+      
+      start_btn.addEventListener('click', function(){
+        let timer_task = document.querySelector("#timer-task");
+        let timer_amount = document.querySelector("#timer-amount");
+
+      if(timer_task.value === '' || timer_amount.value === ''){
+        alert('Please fill in the task and the amount of time you want to set the timer for');
+      }else{
+        // reveal the background div whihc holds the timer
+        document.querySelector('.background').style.display = 'block';
+        // display the timer task to the UI
+        task_div.innerHTML = `Task: ${timer_task.value}`;
+        
+      }
+      })
+    </script>
+  </body>
 </html>
