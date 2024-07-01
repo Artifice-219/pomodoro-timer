@@ -1,9 +1,18 @@
 @media (max-width: 414px) {
 
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+    }
+
     .skip{
         position: absolute;
         right: 5%;
         z-index: 1;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: white;
+
     }
     
     .tag-line{
@@ -33,6 +42,7 @@
         background-color: lightblue;
         overflow: hidden;
         background-color: blueviolet;
+        animation: fadeIn 1s forwards;
 
     }
 
@@ -61,6 +71,15 @@
         border-radius: 50pc;
         bottom: 20px;
     }
+
+    @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
 
 

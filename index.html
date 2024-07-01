@@ -7,13 +7,13 @@
   </head>
   <body>
     <!-- slider for the mini-tutorial -->
-    <p class="skip">skip</p>
+    <p class="skip">Skip</p>
     <p class="tag-line">Plan your work and Stay productive</p>
 
     <div class="slider">
-      <div class="slider-item active" id="first-slide">slide #1</div>
-      <div class="slider-item" id="second-slide">slide #2</div>
-      <div class="slider-item" id="third-slide">slide #3</div>
+      <div class="slider-item active" id="first-slide">slide #1 shor discussion of the pomodoro technique</div>
+      <div class="slider-item" id="second-slide">slide #2 how to use the app</div>
+      <div class="slider-item" id="third-slide">slide #3 just a lets begin</div>
     </div>
 
     <!-- next button -->
@@ -33,16 +33,13 @@
       next_button.addEventListener("click", function () {
         // increments the current_index and will loop back to 0 after the last slide
         current_index = (current_index + 1) % total_slides;
-        console.log(`Current Index after click: ${current_index}`);
 
         // remove the "active" class from all slides
         slides.forEach((slide) => {
-          console.log(`Removing active class from slide: ${slide.id}`);
           slide.classList.remove("active");
         });
 
         // add "active" class to the current slide
-        console.log(`Adding active class to slide: ${slides[current_index].id}`);
         slides[current_index].classList.add("active");
       });
 
