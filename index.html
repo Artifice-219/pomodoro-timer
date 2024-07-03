@@ -32,7 +32,12 @@
 
       next_button.addEventListener("click", function () {
         // increments the current_index and will loop back to 0 after the last slide
-        current_index = (current_index + 1) % total_slides;
+        current_index += 1;
+
+        // proceed to next page once slide index is 3
+        if(current_index === 3){
+          window.location.href = "timer-page.html";
+        }
 
         // remove the "active" class from all slides
         slides.forEach((slide) => {

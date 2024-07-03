@@ -3,6 +3,13 @@
         padding: 0px;
         margin: 0px;
     }
+
+    body {
+      background-image: url('https://i.pinimg.com/564x/0b/f4/60/0bf460bf07ff978af34050177232fd17.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+  }
     
     .background{
         /* normally hidden */
@@ -15,16 +22,15 @@
         background-color: black;
     }
     .timer{
-        position: absolute;
+        position: relative;
         top: 2px;
-        left: 4px;
         margin: 0;
-        height: 98%;
+        height: 100vh;
         width: 98%;
         border-radius: 20px;
         display: flex;
         justify-content: center;
-        background-color: black;
+        background-color: red;
     }
     
     .task{
@@ -85,13 +91,13 @@
         align-items: center;
         justify-content: center;
         gap: 2px;
-        top: 50%;
-        left: 2px;
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
+        top: 10%;
+        right: 5rem;
+        height: 250px;
+        width: 500px;
+        border-radius: 100%;
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 1.5rem;
+        font-size: 3.5rem;
         color: white ;
         background-color: purple;
     }
@@ -138,7 +144,60 @@
 
       #timer-amount-labe{
         position: relative;
-        top: 40px;
+        top: 75px;
+        left: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2rem;
       }
+
+      #timer-amount{
+        position: relative;
+        top: 70px;
+        left: 30px;
+        height: 40px;
+        width: 120px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5rem;
+        padding-left: 2px;
+        border-radius: 10px;
+        background-color: white;
+      }
+
+      #timer-break-label{
+        position: relative;
+        top: 120px;
+        left: 20px;
+        font-size: 2rem;
+      }
+
+      #timer-break{
+        position: relative;
+        top: 118px;
+        left: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5rem;
+        padding: 4px;
+        border-radius: 10px;
+        background-color: white;
+      }
+
+      .controls{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 190px;
+        left: 120px;
+        width: fit-content;
+        padding: 4px;
+        gap: 10px;
+      }
+
+     button{
+      height: 50px;
+      width: 100px;
+      border-radius: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.4rem;
+     }
 }
 

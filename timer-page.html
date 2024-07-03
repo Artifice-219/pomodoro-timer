@@ -4,35 +4,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="timer-page.css">
+    <!-- icons from fontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
   <body>
-    <h1>Main Timer Page</h1>
     <!-- first time using dialog tag -->
     <dialog open class="dialog">
         <span class="close">&times;</span>
         <label id="task-label" for="timer-task">Task :</label>
+        <i class="edit-icon fa-regular fa-pen-to-square"></i>
         <input type="text" name="timer-task" id="timer-task" />
         <br />
-<!-- 
-        <label id="timer-amount-labe" for="timer-amount">Focus Time</label>
-        <p>20 mins</p> -->
 
-      <!-- <select name="timer-amount" id="timer-amount">
-        <option value="20">20 Minutes</option>
-        <option value="40">40 Minutes</option>
-        <option value="60">1 Hour</option>
+        <label id="timer-amount-labe" for="timer-amount">Focus Time</label>
+       <select name="timer-amount" id="timer-amount">
+        <option value="20" selected>20 Min</option>
+        <option value="40">40 Min</option>
+        <option value="60">1 Hr</option>
       </select>
       <br>
 
-      <label for="timer-break">Timer break</label>
+      <label id="timer-break-label" for="timer-break">Timer break</label>
       <select name="timer-break" id="timer-break">
-        <option value="5">5 Minutes</option>
-        <option value="10">10 Minutes</option>
-        <option value="15">15 Minutes</option>
+        <option value="5" selected>5 Min</option>
+        <option value="10">10 Min</option>
+        <option value="15">15 Min</option>
       </select>
 
-      <button id="start-btn">Start Timer</button>
-      <button class="back">Go back</button> -->
+      <div class="controls">
+        <button id="start-btn">Start Timer</button>
+        <button class="back">Go back</button> 
+      </div>
+      
+    </dialog>
+
+    <dialog class="edit-task-dialog">
+      <span class="close">&times;</span>
+      <label id="edit-task-label" for="edit-task">Task :</label>
+      <input type="text" name="edit-task" id="edit-task" />
+
+      <div class="edit-controls">
+        <button class="save">Save Changes</button>
+        <button class="reset">Edit</button>
+      </div>
+      
     </dialog>
 
    
@@ -153,5 +168,16 @@ document.addEventListener('DOMContentLoaded', initializeProgressRing);
           window.location.href = 'index.html';
         })
        </script>
+
+        <!-- for the edit functionality -->
+     <script>
+      let edit_btn = document.querySelector('.edit-icon');
+
+      edit_btn.addEventListener('click', function(){
+        // show the edi-dialog to edit the task
+        let edit_dialog = document.querySelector('.edit-task-dialog');
+        edit_dialog.show();
+      })
+     </script>
   </body>
 </html>
