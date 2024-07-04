@@ -3,26 +3,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="timer-page.css">
+    <link rel="stylesheet" href="timer-page.css" />
     <!-- icons from fontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <!-- first time using dialog tag -->
     <dialog open class="dialog">
-        <span class="close">&times;</span>
-        <label id="task-label" for="timer-task">Task :</label>
-        <i class="edit-icon fa-regular fa-pen-to-square"></i>
-        <input type="text" name="timer-task" id="timer-task" />
-        <br />
+      <span class="close">&times;</span>
+      <label id="task-label" for="timer-task">Task :</label>
+      <i class="edit-icon fa-regular fa-pen-to-square"></i>
+      <input type="text" name="timer-task" id="timer-task" />
+      <br />
 
-        <label id="timer-amount-labe" for="timer-amount">Focus Time</label>
-       <select name="timer-amount" id="timer-amount">
+      <label id="timer-amount-labe" for="timer-amount">Focus Time</label>
+      <select name="timer-amount" id="timer-amount">
         <option value="20" selected>20 Min</option>
         <option value="40">40 Min</option>
         <option value="60">1 Hr</option>
       </select>
-      <br>
+      <br />
 
       <label id="timer-break-label" for="timer-break">Timer break</label>
       <select name="timer-break" id="timer-break">
@@ -33,9 +36,8 @@
 
       <div class="controls">
         <button id="start-btn">Start Timer</button>
-        <button class="back">Go back</button> 
+        <button class="back">Go back</button>
       </div>
-      
     </dialog>
 
     <dialog class="edit-task-dialog">
@@ -47,29 +49,44 @@
         <button class="save">Save Changes</button>
         <button class="reset">Edit</button>
       </div>
-      
     </dialog>
-
-   
 
     <!-- the UI for the timer hidden by default until toggled by some event -->
     <div class="background">
-        <div class="timer">
-            <h2>Pomodoro Timer</h2>
-            <div class="task"></div>
-            <div class="focus-time"></div>
-            <div class="break-time"></div>
+      <div class="timer">
+        <h2>Pomodoro Timer</h2>
+        <div class="task"></div>
+        <div class="focus-time"></div>
+        <div class="break-time"></div>
 
-            <div class="clock-face">
-              <div class="min">00</div>
-              <div class="separator">:</div>
-              <div class="sec">00</div>
-              <svg class="progress-ring" width="100" height="100">
-                <circle class="progress-ring__circle" stroke="blue" stroke-width="4" fill="transparent" r="48" cx="50" cy="50"/>
-              </svg>
-            </div>
+        <div class="clock-face">
+          <div class="min">00</div>
+          <div class="separator">:</div>
+          <div class="sec">00</div>
+          <svg class="progress-ring" width="100" height="100">
+            <circle
+              class="progress-ring__circle"
+              stroke="blue"
+              stroke-width="4"
+              fill="transparent"
+              r="48"
+              cx="50"
+              cy="50"
+            />
+          </svg>
         </div>
+      </div>
     </div>
+
+    <!-- break timer -->
+       <!-- the UI for the timer hidden by default until toggled by some event -->
+      <div class="break-time-div">
+        <div class="poster-image">
+          <img src="https://i.pinimg.com/originals/2d/15/c7/2d15c7c725e9feaa1e6f5303143d87db.gif" alt="poured-coffe">
+        </div>
+        <h3>Take a well deserve break 😍</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
 
     <!-- closes the dialog -->
     <script>
@@ -88,96 +105,97 @@
     <script>
       // when the start button is clicked first  check if the timer if the timer-task and the timer-amount have some
       // value on it
-      let start_btn = document.querySelector('#start-btn');
-      let task_div = document.querySelector('.task');
-      let focus_time_div = document.querySelector('.focus-time');
-      let  break_time_div = document.querySelector('.break-time');
+      let start_btn = document.querySelector("#start-btn");
+      let task_div = document.querySelector(".task");
+      let focus_time_div = document.querySelector(".focus-time");
+      let break_time_div = document.querySelector(".break-time");
 
-      let timer_amount = document.querySelector('#timer-amount');
-      let break_time = document.querySelector('#timer-break');
+      let timer_amount = document.querySelector("#timer-amount");
+      let break_time = document.querySelector("#timer-break");
 
-      // gets the select value from the select element 
+      start_btn.addEventListener("click", function () {
+
       let focus_time = timer_amount.options[timer_amount.selectedIndex].value;
       let break_time_value = break_time.options[break_time.selectedIndex].value;
-      
-      start_btn.addEventListener('click', function(){
+
 
         let timer_task = document.querySelector("#timer-task");
-    
-      if(timer_task.value === '' || timer_amount.value === ''){
-        alert('Please fill in the task and the amount of time you want to set the timer for');
-      }else{
-        // reveal the background div whihc holds the timer
-        document.querySelector('.background').style.display = 'block';
-        // display the timer task to the UI
-        task_div.innerHTML = `Task: ${timer_task.value}`;
-        focus_time_div.innerHTML = `Time ${focus_time};`;
-        break_time_div.innerHTML = `Break ${break_time_value};`;
-        
-      }
-      })
+
+        if (timer_task.value === "" || timer_amount.value === "") {
+          alert(
+            "Please fill in the task and the amount of time you want to set the timer for"
+          );
+        } else {
+          // reveal the background div whihc holds the timer
+          document.querySelector(".background").style.display = "block";
+          // display the timer task to the UI
+          task_div.innerHTML = `Task: ${timer_task.value}`;
+          focus_time_div.innerHTML = `Time ${focus_time};`;
+          break_time_div.innerHTML = `Break ${break_time_value};`;
+        }
+
+        start_timer();
+
+
+      });
     </script>
 
-    <!-- for the timer's slider -->
+    <!-- pomodor-active-timer -->
      <script>
-      // Function to initialize the circular slider
-function initializeProgressRing() {
-  const circle = document.querySelector('.progress-ring__circle');
-  const radius = circle.r.baseVal.value;
-  const circumference = radius * 2 * Math.PI;
+     function start_timer() {
+  let minutes = parseInt(timer_amount.options[timer_amount.selectedIndex].value);
+  let seconds = 0; // Start with 0 seconds
 
-  circle.style.strokeDasharray = `${circumference} ${circumference}`;
-  circle.style.strokeDashoffset = circumference;
+  let clock_minutes = document.querySelector('.min');
+  let clock_seconds = document.querySelector('.sec');
 
-  function setProgress(percent) {
-    const offset = circumference - (percent / 100) * circumference;
-    circle.style.strokeDashoffset = offset;
-  }
+  intervalID = setInterval(function () {
+    if (seconds === 0) {
+      if (minutes === 0) {
+        clearInterval(intervalID);
+       
+        let active_div = document.querySelector('.background');
+        let break_time_div = document.querySelector('.break-time-div');
 
-  // Example usage with a countdown timer
-  const totalSeconds = 60; // Change this to the desired timer duration in seconds
-  let remainingSeconds = totalSeconds;
+        active_div.style.display = "none";
+        break_time_div.style.display = "block";
 
-  const interval = setInterval(() => {
-    if (remainingSeconds <= 0) {
-      clearInterval(interval);
-      return;
+
+        return;
+      } else {
+        minutes--;
+        seconds = 59;
+      }
+    } else {
+      seconds--;
     }
 
-    remainingSeconds--;
-    const percent = (remainingSeconds / totalSeconds) * 100;
-    setProgress(percent);
+    clock_minutes.innerHTML = String(minutes).padStart(2, '0');
+    clock_seconds.innerHTML = String(seconds).padStart(2, '0');
 
-    const minutes = Math.floor(remainingSeconds / 60);
-    const seconds = remainingSeconds % 60;
-    document.querySelector('.min').textContent = String(minutes).padStart(2, '0');
-    document.querySelector('.sec').textContent = String(seconds).padStart(2, '0');
-  }, 1000);
+  }, 10); // 1000 milliseconds = 1 second
 }
 
-// Initialize the progress ring when the page loads
-document.addEventListener('DOMContentLoaded', initializeProgressRing);
-
      </script>
 
-     <!--  for the go back button -->
-       <script>
-        let back_btn = document.querySelector('.back');
+    <!--  for the go back button -->
+    <script>
+      let back_btn = document.querySelector(".back");
 
-        back_btn.addEventListener('click',() => {
-          window.location.href = 'index.html';
-        })
-       </script>
+      back_btn.addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    </script>
 
-        <!-- for the edit functionality -->
-     <script>
-      let edit_btn = document.querySelector('.edit-icon');
+    <!-- for the edit functionality -->
+    <script>
+      let edit_btn = document.querySelector(".edit-icon");
 
-      edit_btn.addEventListener('click', function(){
+      edit_btn.addEventListener("click", function () {
         // show the edi-dialog to edit the task
-        let edit_dialog = document.querySelector('.edit-task-dialog');
+        let edit_dialog = document.querySelector(".edit-task-dialog");
         edit_dialog.show();
-      })
-     </script>
+      });
+    </script>
   </body>
 </html>
