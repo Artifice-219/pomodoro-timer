@@ -52,7 +52,7 @@
     </dialog>
 
     <!-- the UI for the timer hidden by default until toggled by some event -->
-    <div class="background">
+    <div class="background" style="display: none;">
       <div class="timer">
         <h2>Pomodoro Timer</h2>
         <div class="task"></div>
@@ -80,13 +80,27 @@
 
     <!-- break timer -->
        <!-- the UI for the timer hidden by default until toggled by some event -->
-      <div class="break-time-div">
+      <div class="break-time-div" style="display: none;">
         <div class="poster-image">
           <img src="https://i.pinimg.com/originals/2d/15/c7/2d15c7c725e9feaa1e6f5303143d87db.gif" alt="poured-coffe">
         </div>
         <h3>Take a well deserve break 😍</h3>
         <p>Lorem ipsum dolor sit amet.</p>
       </div>
+
+      <!-- timer finished UI -->
+       <div class="timer-finished">
+          <h3>Yeheeyy you did it</h3>
+          <div class="poster-img">
+            <img src="https://i.pinimg.com/originals/f0/e9/ec/f0e9ec37981cb79b24d761bdac57e433.gif" alt="thumbs-up">
+          </div>
+
+          <div class="control-button">
+            <button class="retry">One more</button>
+            <button class="exit">Maybe next time</button>
+          </div>
+          
+       </div>
 
     <!-- closes the dialog -->
     <script>

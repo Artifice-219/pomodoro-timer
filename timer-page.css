@@ -202,28 +202,82 @@
       font-size: 1.4rem;
      }
 
+     .timer-finished{ 
+
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      overflow: hidden;
+      display: block;
+     }
+
+     .control-button{
+      position: relative;
+     }
+
+     .control-button button{
+      padding: 10px 20px; /* Adjust padding as needed */
+  width: auto; /* Let the button width adjust based on content */
+  max-width: 100%; 
+  border-radius: 50px;
+  background-color: wheat;
+     }
+    
+     .timer-finished > .poster-img{
+      position: relative;
+      left: 5%;
+      height: 90%;
+      width: 90%;
+      background-color: red;
+      display: block;
+     }
+    
+     .timer-finished > h3{
+      position: absolute;
+      z-index: 2;
+      margin: 2px;
+      top: 6%;
+      left: 10%;
+      color: white;
+      font-weight: 600;
+      font-size: 2.3rem;
+     }
+    
+     .poster-img img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    
+     }
+
 }
 
-.break-time-div{
 
-  position: relative;
-  height: 600px;
-  width: 300px;
+ .timer-finished{ 
+
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
   overflow: hidden;
+ }
+
+ .timer-finished > .poster-img{
+  position: relative;
+  left: 5%;
+  height: 90%;
+  width: 90%;
   background-color: red;
- 
  }
 
-
- .poster-image{
-  width: 60%; /* or any specific width */
-  height: 60%; /* or any specific height */
-  position: relative;
-  overflow: hidden;
+ .timer-finished > h3{
+  position: absolute;
  }
 
- .poster-image img{
-  width: 100%;
+ .poster-img img{
   height: 100%;
-  object-fit: cover; 
+  width: 100%;
+  object-fit: cover;
+
  }
