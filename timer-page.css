@@ -3,7 +3,8 @@
         padding: 0px;
         margin: 0px;
     }
-
+/* TODO4 : IMPORT A MUCH BETTER FONTS FOR THIS SHIT */
+/* TODO 8 : PATONG PATONG YUNG MGA ELEMENTS KAPAG ACTIVE NA YUNG TIMER */
     body {
       background-image: url('https://i.pinimg.com/564x/0b/f4/60/0bf460bf07ff978af34050177232fd17.jpg');
       background-size: cover;
@@ -140,6 +141,7 @@
         height: 40px;
         width: 90%;
         position: relative;
+        /* TODO 6: WHY THE FUCK DID YOU MAKE IT GRAY ? */
         background-color: gray;
         border-radius: 50px;
       }
@@ -183,6 +185,7 @@
         background-color: white;
       }
 
+      /* TODO 7 : TEXT INSIDE THIS BUTTONS ARE NOT PROPERLY ALIGNED  */
       .controls{
         display: flex;
         flex-direction: column;
@@ -210,6 +213,8 @@
       margin: 0;
       overflow: hidden;
       display: block;
+      /* hide for now */
+      display: none;
      }
 
      .control-button{
@@ -231,6 +236,7 @@
       width: 90%;
       background-color: red;
       display: block;
+  
      }
     
      .timer-finished > h3{
