@@ -1,9 +1,12 @@
+/* importing poppins font */
+/* TODO 14 : USE THIS FUCKING FONT WHENEVER POSSIBLE */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @media (max-width: 414px){
     *{
         padding: 0px;
         margin: 0px;
     }
-/* TODO4 : IMPORT A MUCH BETTER FONTS FOR THIS SHIT */
 /* TODO 8 : PATONG PATONG YUNG MGA ELEMENTS KAPAG ACTIVE NA YUNG TIMER */
     body {
       background-image: url('https://i.pinimg.com/564x/0b/f4/60/0bf460bf07ff978af34050177232fd17.jpg');
@@ -141,8 +144,7 @@
         height: 40px;
         width: 90%;
         position: relative;
-        /* TODO 6: WHY THE FUCK DID YOU MAKE IT GRAY ? */
-        background-color: gray;
+        background-color: #f9f9f9;
         border-radius: 50px;
       }
 
@@ -287,3 +289,74 @@
   object-fit: cover;
 
  }
+
+ /* styling for that edit-task monstrosity */
+ .edit-task-dialog {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  max-width: 90%;
+}
+
+.close {
+  align-self: flex-end;
+  font-size: 24px;
+  cursor: pointer;
+  color: #c00;
+}
+
+.edit-task-dialog label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.edit-task-dialog input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.edit-task-dialog input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.edit-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.save, .reset {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save {
+  background-color: #28a745; /* Green for Save */
+  color: white;
+}
+
+.save:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.reset {
+  background-color: #007bff; /* Blue for Edit */
+  color: white;
+}
+
+.reset:hover {
+  background-color: #0069d9; /* Darker blue on hover */
+}
+
