@@ -7,7 +7,7 @@
         padding: 0px;
         margin: 0px;
     }
-/* TODO 8 : PATONG PATONG YUNG MGA ELEMENTS KAPAG ACTIVE NA YUNG TIMER */
+
     body {
       background-image: url('https://i.pinimg.com/564x/0b/f4/60/0bf460bf07ff978af34050177232fd17.jpg');
       background-size: cover;
@@ -25,6 +25,7 @@
         height: 100%;
         background-color: black;
     }
+
     .timer{
         position: relative;
         top: 2px;
@@ -39,7 +40,8 @@
     
     .task{
         position: absolute;
-        top: 8%;
+        bottom: 30%;
+        left: 8%;
         background-color: purple ;
         height: fit-content;
         width: fit-content;
@@ -48,14 +50,15 @@
         color: white;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
-        font-size: 1.2rem;
+        font-size: 1rem;
     
     }
     
     .focus-time{
     
         position: absolute;
-        top: 20%;
+        bottom: 30%;
+        right: 12%;
         background-color: purple ;
         height: fit-content;
         width: fit-content;
@@ -64,7 +67,7 @@
         color: white;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
-        font-size: 1.2rem;
+        font-size: 1rem;
     
     }
     
@@ -87,6 +90,12 @@
     h2{
         position: relative;
         color: white;
+        height: fit-content;
+        width: fit-content;
+        padding: 10px;
+        font-size: 1.2rem;
+        font-family: poppins;
+        font-weight: 300;
         
     }
 
@@ -98,7 +107,7 @@
         justify-content: center;
         gap: 2px;
         top: 10%;
-        right: 5rem;
+        right: 20%;
         height: 250px;
         width: 500px;
         border-radius: 100%;
@@ -110,8 +119,8 @@
 
     .progress-ring {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 10px;
+        left: 10px;
       }
       
       .progress-ring__circle {
@@ -186,8 +195,7 @@
         border-radius: 10px;
         background-color: white;
       }
-
-      /* TODO 7 : TEXT INSIDE THIS BUTTONS ARE NOT PROPERLY ALIGNED  */
+      
       .controls{
         display: flex;
         flex-direction: column;
@@ -198,13 +206,18 @@
         padding: 4px;
         gap: 10px;
       }
-
+      
+    
+    .controls > #start-btn{
+      font-size: 1rem;
+    }
      button{
       height: 50px;
       width: 100px;
       border-radius: 20px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.4rem;
+      font-family: poppins, Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      padding: 10px;
      }
 
      .timer-finished{ 
@@ -301,6 +314,7 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 300px;
   max-width: 90%;
+  display: none;
 }
 
 .close {

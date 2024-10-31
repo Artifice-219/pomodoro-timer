@@ -33,6 +33,23 @@
         overflow: hidden;
     }
 
+    #first-slide p{
+        position: relative;
+        top: 1%;
+        display: flex;
+        flex-direction: column;
+        text-align:center;
+        font-size: 1rem;
+        line-height: 1.8rem;
+        padding: 10px;
+    }
+
+    #first-slide{
+        
+        background-color:  rgb(131,58,180);
+
+    }
+
     .active{
         display: block;
         position: relative;
@@ -43,12 +60,6 @@
         overflow: hidden;
         background-color: blueviolet;
         animation: fadeIn 1s forwards;
-
-    }
-
-    #first-slide{
-        
-        background-color: red;
 
     }
 
